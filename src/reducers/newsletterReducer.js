@@ -1,9 +1,16 @@
-import { FETCH_NEWSLETTER_ARCHIVE } from '../actions/types';
+import { FETCH_NEWSLETTER_ARCHIVE } from "../actions/types";
 
 export default function(state = {}, action) {
     switch(action.type) {
         case FETCH_NEWSLETTER_ARCHIVE:
-            return { ...state, archive: action.payload }
+        const latestItem = action.payload[0];
+        const archive = action.payload;
+        archive.shift()
+            return { 
+                ...state,
+                archive,
+                latestItem 
+             }
         default: return state;
     }
 }
