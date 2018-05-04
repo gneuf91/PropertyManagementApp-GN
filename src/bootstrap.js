@@ -18,6 +18,7 @@ import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 
 import Newsletter from './components/newsletter/newsletter';
+import NewsletterDetail from './components/newsletter/newsletter_detail';
 
 function main() {
   ReactDOM.render(
@@ -27,7 +28,8 @@ function main() {
           <Switch>
               <Route path="/signin" component={Signin}></Route>
               <Route path="/signup" component={Signup}></Route>
-              <Route path="/newsletter" component={Newsletter}></Route>
+              <Route path="/newsletter" exact component={Newsletter}></Route>
+              <Route path="/newsletter/detail/:id" component={NewsletterDetail}></Route>
             </Switch>
         </Header>
       </Router>
