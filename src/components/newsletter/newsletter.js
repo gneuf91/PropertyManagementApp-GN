@@ -21,7 +21,6 @@ class Newsletter extends Component {
                     </div> 
 
                     <NewsletterArchive archive={this.props.archive}/>
-      
                 </div>
                 <div className="col-md-9">
                     <NewsletterContent latestItem={this.props.latestItem} />

@@ -14,17 +14,17 @@ class Signin extends Component {
     }
 
     render() {
-        const { handleSubmit} = this.props;
+        const { handleSubmit } = this.props;
 
-        return ( 
-        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-            <label htmlFor="email">Email</label>
-            <Field name="email" component={this.renderInput} type="text"/>
-            <label htmlFor="password">Password</label>
-            <Field name="password" component={this.renderInput} type="password"/>
+        return (
+            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                <label htmlFor="email">Email</label>
+                <Field name="email" component={this.renderInput} type="text"/>
+                <label htmlFor="password">Password</label>
+                <Field name="password" component={this.renderInput} type="password"/>
 
-            <button action="submit" className="btn btn-primary">Sign In</button>
-        </form>
+                <button action="submit" className="btn btn-primary">Sign In</button>
+            </form>
         )
     }
 }
