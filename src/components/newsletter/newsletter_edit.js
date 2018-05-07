@@ -5,38 +5,49 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 class EditNewsletter extends Component {
+
+    componentDidMount() {
+        this.props.fetchNewsletterById(this.props.match.params._id)
+    }
+    
     renderInput(field) {
-        return <input className="form-control" {...field.input} type="field.type"/>
+        return (
+            <div>
+                <label htmlFor={field.input.name}>{field.input.name}</label>
+                <input className="form-control" {...field.input} />
+            </div>
+        )
     }
 
-    handleFormSubmit({email, password}) {
-        this.props.signinUser({title, body})
+    handleFormSubmit({title, body}) {
+        console.log('trying to handle submit', title, body)
     }
 
     render() {
-        const { handleSubmit} = this.props;
+        const { handleSubmit } = this.props;
 
-        return ( 
-        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-            <label htmlFor="title">Title</label>
-            <Field name="title" component={this.renderInput} type="text"/>
-            <label htmlFor="body">Body</label>
-            <Field name="body" component={this.renderInput} type="text"/>
+        return (
+            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                
+                <Field name="title" component={this.renderInput} type="text"/>
+                <Field name="body" component={this.renderInput} type="textarea"/>
 
-            <Link to="/newsletter"><div>Cancel</div></Link>
-            <button action="submit" className="btn btn-primary">Save</button>
-        </form>
+                <Link to="/newsletter"><div>Cancel</div></Link>
+                <button action="submit" className="btn btn-primary">Save</button>
+            </form>
         )
     }
 }
 
 function mapStateToProps(state) {
-    return { state }
+    return { initialValues: state.newsletter.fetchedItem } 
 }
 
+EditNewsletter = reduxForm(
+    {
+        form: "editNewsletter",
+        enableReinitialize: true
 
-
-EditNewsletter = reduxForm({form: "editNewsletter"})(EditNewsletter)
-
+    })(EditNewsletter)
 
 export default connect(mapStateToProps, actions)(EditNewsletter);
