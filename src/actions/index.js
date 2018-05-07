@@ -24,6 +24,17 @@ export function signinUser({email, password}) {
     }
 }
 
+export function saveNewsletterEdit({title,body},_id) {
+    return function(dispatch) {
+        axios.put(`${ROOT_URL}/newsletter/edit${_id}`, {title, body}, {
+            headers: { authorization: localStorage.getItem('token') }
+        }) 
+            .then(response => {
+                    console.log(response.data);
+            })
+    }
+}
+
 export function fetchNewsletterArchive() {
     return function(dispatch) {
         axios.get(`${ROOT_URL}/newsletterArchive`, {
