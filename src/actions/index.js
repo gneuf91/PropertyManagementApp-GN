@@ -1,7 +1,8 @@
 
 import { 
     FETCH_NEWSLETTER_ARCHIVE,
-    FETCH_NEWSLETTER_BY_ID 
+    FETCH_NEWSLETTER_BY_ID,
+    SELECT_REQUEST_TYPE
 } from './types';
 
 import axios from 'axios';
@@ -75,5 +76,14 @@ export function saveNewNewsletter({title, body}, callback) {
                     callback()
                 }))
             })
+    }
+}
+
+
+
+export function selectRequestType(name) {
+    return {
+        type: SELECT_REQUEST_TYPE,
+        payload: name
     }
 }

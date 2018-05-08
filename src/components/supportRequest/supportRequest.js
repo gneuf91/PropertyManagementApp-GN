@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
+import InfoBox from '../infoBox';
 
 class SupportRequest extends Component {
     render() {
         return (
-            <div>
-
+            <div >
+                support request 
+                <div>
+                    <div>Add Request</div>
+                    <div className="row">
+                        <div className="col-md-3">
+                             <InfoBox type='pending'/>
+                             <InfoBox type='in-progress'/>
+                             <InfoBox type='complete'/>
+                        </div>
+                        <div className="col-md-9">
+                            Support Request Content - contains UL
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
