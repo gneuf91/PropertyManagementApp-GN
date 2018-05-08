@@ -81,9 +81,9 @@ export function saveNewNewsletter({title, body}, callback) {
 
 
 
-export function selectRequestType(name) {
+export function selectRequestType(type) {
     return {
         type: SELECT_REQUEST_TYPE,
-        payload: name
+        payload: type
     }
 }
