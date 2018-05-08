@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link }from 'react-router-dom';
 
 
 class SupportRequestItem extends Component {
@@ -20,9 +21,16 @@ class SupportRequestItem extends Component {
 
                 <div>
                     action
-                </div><div>
+                </div>
+                <div>
                     {this.props.date}
                 </div>
+                <div>
+                    <Link to={`/support-request/edit/${this.props._id}`}>
+                        <div>{this.props.body}</div>
+                    </Link>
+                </div>
+
             </li>
         )
     }

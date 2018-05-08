@@ -3,7 +3,7 @@ import InfoBox from '../infoBox';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import SupportRequestContent from './supportReport_content';
+import SupportRequestContent from './supportRequest_content';
 
 class SupportRequest extends Component {
 

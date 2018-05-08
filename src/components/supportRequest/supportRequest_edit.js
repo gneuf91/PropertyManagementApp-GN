@@ -4,10 +4,10 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-class EditNewsletter extends Component {
+class EditSupportRequest extends Component {
 
     componentDidMount() {
-        this.props.fetchNewsletterById(this.props.match.params._id)
+        // this.props.fetchSupportRequestById(this.props.match.params._id)
     }
     
     renderInput(field) {
@@ -20,10 +20,9 @@ class EditNewsletter extends Component {
     }
 
     handleFormSubmit({title, body}) {
-        console.log('trying to handle submit', title, body)
-        this.props.saveNewsletterEdit({title, body},this.props.match.params._id, () => {
-            this.props.history.push('/newsletter');
-        })
+        // this.props.saveSupportRequestById({title, body},this.props.match.params._id, () => {
+        //     this.props.history.push('/support-request');
+        // })
     }
 
     render() {
@@ -42,14 +41,14 @@ class EditNewsletter extends Component {
 }
 
 function mapStateToProps(state) {
-    return { initialValues: state.newsletter.fetchedItem } 
+    return { state } 
 }
 
-EditNewsletter = reduxForm(
+EditSupportRequest = reduxForm(
     {
-        form: "editNewsletter",
+        form: "editSupportRequest",
         enableReinitialize: true
     }
-)(EditNewsletter)
+)(EditSupportRequest)
 
-export default connect(mapStateToProps, actions)(EditNewsletter);
+export default connect(mapStateToProps, actions)(EditSupportRequest);
