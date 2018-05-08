@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
-        case FETCH_NEWSLETTER_ARCHIVE:
+        case SELECT_REQUEST_TYPE:
             const selected = action.payload
             return {
                 ...state,
