@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import InfoBox from '../infoBox';
 
+import { connect } from 'react-redux';
+
 class SupportRequest extends Component {
     render() {
         return (
@@ -24,5 +26,8 @@ class SupportRequest extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return { state: state.supportRequest }
+}
 
-export default SupportRequest;
+export default connect()(SupportRequest);
