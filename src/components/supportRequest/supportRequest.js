@@ -3,6 +3,7 @@ import InfoBox from '../infoBox';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import SupportRequestContent from './supportReport_content';
 
 class SupportRequest extends Component {
 
@@ -23,7 +24,7 @@ class SupportRequest extends Component {
                              <InfoBox type='complete'/>
                         </div>
                         <div className="col-md-9">
-                            Support Request Content - contains UL
+                            <SupportRequestContent/>
                         </div>
                     </div>
                 </div>
