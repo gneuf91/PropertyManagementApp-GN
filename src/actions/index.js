@@ -140,3 +140,9 @@ export function saveNewSupportRequest({title, body}, callback) {
             })
     }
 }
+
+export function saveNewSupportRequestStatus(_id, status) {
+    return function(dispatch) {
+        
+    }
+}
