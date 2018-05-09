@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link }from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 
 class SupportRequestItem extends Component {
@@ -26,6 +28,7 @@ class SupportRequestItem extends Component {
                     {this.props.date}
                 </div>
                 <div>
+                    <a onClick={() => this.props.saveNewSupportRequestStatus(this.props._id, this.props.status)}>ChangeStatusButton</a>
                     <Link to={`/support-request/edit/${this.props._id}`}>
                         <div>{this.props.body}</div>
                     </Link>
@@ -37,4 +40,4 @@ class SupportRequestItem extends Component {
 }
 
 
-export default SupportRequestItem
+export default connect(null, actions)(SupportRequestItem);
