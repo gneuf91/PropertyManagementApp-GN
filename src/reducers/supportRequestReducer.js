@@ -27,7 +27,7 @@ export default function(state = INITIAL_STATE, action) {
             supportRequests
         }
         case FETCH_SUPPORT_REQUEST_BY_ID:
-        const fetchedItem = state.archive.find(supportRequest => {
+        const fetchedItem = state.supportRequests.find(supportRequest => {
             if(supportRequest._id == action.payload) {
                 return supportRequest
             }
