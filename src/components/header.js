@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 
 class Header extends Component {
@@ -6,8 +5,8 @@ class Header extends Component {
     return (
       <div>
         <div className="main-header">
-          <h1>Welcome to the HOA Manager!</h1>
-          <p>Please log-in to continue</p>
+          <h1>Welcome to The HOA Manager!</h1>
+          <p>Please login to continue</p>
         </div>
         {this.props.children}
       </div>

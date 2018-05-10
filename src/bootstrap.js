@@ -7,7 +7,7 @@ import Header from './components/header';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(compose(window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore));
+const createStoreWithMiddleware = applyMiddleware(thunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
@@ -43,9 +43,8 @@ function main() {
               <Route path="/newsletter/add" component={AddNewsletter}></Route>
 
               <Route path="/support-request" exact component={SupportRequest}></Route>
-              <Route path="/support-request/edit/:_id"  component={EditSupportRequest}></Route>
-              <Route path="/support-request/add"  component={AddSupportRequest}></Route>
-
+              <Route path="/support-request/edit/:_id" component={EditSupportRequest}></Route>
+              <Route path="/support-request/add" component={AddSupportRequest}></Route>
             </Switch>
         </Header>
       </Router>

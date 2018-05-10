@@ -2,6 +2,7 @@
 import { 
     FETCH_NEWSLETTER_ARCHIVE,
     FETCH_NEWSLETTER_BY_ID,
+
     SELECT_REQUEST_TYPE,
     FETCH_SUPPORT_REQUESTS,
     FETCH_SUPPORT_REQUEST_BY_ID
@@ -53,6 +54,7 @@ export function fetchNewsletterById(_id) {
     )
 }
 
+
 //
 
 export function saveNewsletterEdit({title, body}, _id, callback) {
@@ -83,6 +85,10 @@ export function saveNewNewsletter({title, body}, callback) {
 
 
 
+
+//
+//
+
 export function selectRequestType(type) {
     return {
         type: SELECT_REQUEST_TYPE,
@@ -100,7 +106,7 @@ export function fetchSupportRequests(callback) {
                     type: FETCH_SUPPORT_REQUESTS,
                     payload: response.data
                 })
-                if(callback) {callback()}
+                if(callback) { callback() }
             })
     }
 }
@@ -113,7 +119,6 @@ export function fetchSupportRequestById(_id) {
         }
     )
 }
-
 
 export function saveSupportRequestEdit({title, body}, _id, callback) {
     return function(dispatch) {
@@ -134,7 +139,7 @@ export function saveNewSupportRequest({title, body}, callback) {
             headers: { authorization: localStorage.getItem('token') }
         }) 
             .then(response => {
-                dispatch(fetchSupportRequests(() => {
+                dispatch(fetchNewsletterArchive(() => {
                     callback()
                 }))
             })
@@ -153,12 +158,12 @@ export function saveNewSupportRequestStatus(_id, status) {
         case 'complete':
             newStatus = 'pending';
             break;
-
         default: break;
     }
-
     return function(dispatch) {
-        axios.put(`${ROOT_URL}/support-request/update-status/${_id}`, { status: newStatus }, { headers: { authorization: localStorage.getItem('token')} })
+        axios.put(`${ROOT_URL}/support-request/update-status/${_id}`, {status: newStatus}, {
+            headers: { authorization: localStorage.getItem('token') }
+        })
             .then(response => {
                 console.log(response.data);
                 dispatch(fetchSupportRequests())
