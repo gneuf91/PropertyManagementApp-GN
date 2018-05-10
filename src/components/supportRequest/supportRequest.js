@@ -7,6 +7,8 @@ import SupportRequestContent from './supportRequest_content';
 
 import { Link } from 'react-router-dom';
 
+import addHeaderNav from '../HOC/addHeaderNav';
+
 class SupportRequest extends Component {
 
     componentWillMount() {
@@ -40,5 +42,7 @@ class SupportRequest extends Component {
 function mapStateToProps(state) {
     return { state: state.supportRequest }
 }
+
+SupportRequest = addHeaderNav(SupportRequest)
 
 export default connect(mapStateToProps, actions)(SupportRequest);
