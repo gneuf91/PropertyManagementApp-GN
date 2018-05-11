@@ -3,10 +3,13 @@
     display: flex;
     justify-content: center;
 
+    .add-nav__selected {
+        border-bottom: 2px solid $color-red;
+        color: $color-red;
+    }
+
     a {
         text-decoration-color: transparent;
-        
-        
     }
 
     span {
@@ -23,9 +26,5 @@
         font-weight: 500px;
         line-height: 20px;
         text-align: center;
-
     }
-
-   
-
 }
