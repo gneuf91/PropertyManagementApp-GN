@@ -6,12 +6,7 @@ ul {
     padding: 0;
 }
 
-.info-box {
-    width: 250px;
-    height: 250px;
-    border: 1px solid $color-red;
-    margin: 25px;
-}
+
 
 body {
     margin: 39px 140px;
@@ -25,3 +20,4 @@ body {
 @import './addHeaderNav';
 @import './newsletter_content';
 @import './newsletter';
+@import './infoBox';
