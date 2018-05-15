@@ -28,7 +28,7 @@ class Signin extends Component {
                     <label htmlFor="password">Password</label>
                     <Field name="password" component={this.renderInput} type="password"/>
                 </div>
-                <button action="submit">Sign In</button>
+                <button className="signin-button" action="submit">Sign In</button>
             </form>
         )
     }
@@ -38,9 +38,8 @@ function mapStateToProps(state) {
     return { state }
 }
 
-Signin = reduxForm({form: "signin"})(Signin);
+Signin = reduxForm({form: "signin"})(Signin)
 Signin = addTitle(Signin, "Login");
 Signin = addHeaderBorder(Signin);
-
 
 export default connect(mapStateToProps, actions)(Signin);

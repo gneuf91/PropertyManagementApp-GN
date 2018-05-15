@@ -1,6 +1,11 @@
-form {
 
-    width: 629px;
+textarea {
+    min-height: 355px;
+    resize: none;
+}
+
+form {
+    min-width: 629px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -16,7 +21,7 @@ form {
             font-weight: bold;
             line-height: 23px;
         }
-        input {
+        input, textarea {
             height: 40px;
             width: 500px;
             border: 1px solid #E6E6E6;
@@ -32,7 +37,7 @@ form {
         margin-top: 41px;
     }
 
-    button {
+    .signin-button {
         margin-top: 87px;
         height: 40px;
         width: 216.67px;

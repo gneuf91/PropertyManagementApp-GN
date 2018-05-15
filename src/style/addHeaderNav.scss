@@ -1,11 +1,10 @@
 .add-nav {
-
     display: flex;
     justify-content: center;
     margin-bottom: 47px;
     padding-bottom: 13px;
-    border-bottom: 1px solid #e6e6e6;
-
+    border-bottom: 1px solid #E6E6E6;
+    
     .add-nav__selected {
         border-bottom: 2px solid $color-red;
         color: $color-red;
@@ -24,9 +23,9 @@
             color: $color-red;
         }
         margin: 0 23px;
-        color: #4d4d4d;
+        color: #4D4D4D;
         font-size: 16px;
-        font-weight: 500px;
+        font-weight: 500;
         line-height: 20px;
         text-align: center;
     }

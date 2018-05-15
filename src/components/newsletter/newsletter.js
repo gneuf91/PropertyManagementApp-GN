@@ -20,7 +20,7 @@ class Newsletter extends Component {
                 <div className="newsletter__side">
                     <div className="info-box">
                         <div className="info-box__text">
-                             02 
+                            02
                         </div>
                         <div className="info-box__sub-text">
                             JAN 2018
